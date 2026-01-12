@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { searchMovies, getMovieDetails } = require('../controllers/movieController');
 
-router.get('/search', (req, res) => {
-  res.json({ message: 'Search route works' });
-});
+router.get('/search', searchMovies);
 
-router.get('/movies/:id', (req, res) => {
-  res.json({ message: 'Movie details route works' });
-});
+router.get('/movies/:id', getMovieDetails);
 
 module.exports = router;
